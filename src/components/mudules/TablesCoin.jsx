@@ -1,10 +1,15 @@
 
-function TablesCoin({ coins }) {
-  console.log( coins );
+import Table from "./Table";
+
+
+function TablesCoin({ coins,isloding }) {
   return (
 
-    <div>TablesCoin</div>
-  )
-}
+<div>
+ 
+ <Table coins={coins} isloding={isloding}/>
+
+</div>
+  )}
 
 export default TablesCoin

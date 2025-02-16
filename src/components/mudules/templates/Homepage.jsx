@@ -5,13 +5,17 @@ import { getcoinlist } from "../../../services/Crypto Api";
 
 function Homepage() {
 const[coins,setcoins]=useState([]);
+const[isloding,setisloding]=useState(true)
 useEffect (() => {
   fetch(getcoinlist())
 .then((res)=>res.json())
-.then((json=>setcoins(json)))},[]);
+.then((json=>setcoins(json)))
+setisloding(false)}
+,[]);
+
 
   return (
-    <TablesCoin coins={coins}/>
+    <TablesCoin coins={coins} isloding={isloding}/>
   )
 }
 
