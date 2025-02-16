@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import TablesCoin from "../TablesCoin"
 import { getcoinlist } from "../../../services/Crypto Api";
+import Pagination from "./Pagination";
 
 
 function Homepage() {
@@ -15,7 +16,11 @@ setisloding(false)}
 
 
   return (
+
+    <>
+    <Pagination/>
     <TablesCoin coins={coins} isloding={isloding}/>
+    </>
   )
 }
 
