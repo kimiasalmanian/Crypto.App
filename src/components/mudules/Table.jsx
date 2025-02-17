@@ -8,7 +8,10 @@ import styles from "./Table.module.css"
 function Table({coins,isloding}) {
   return (
     <div className={styles.conteiner}> 
-        {isloding ?(<FadeLoader />):
+        {isloding ?(<FadeLoader
+  color="#2f3ab6"
+  width={3}
+/>):
        ( <table className={styles.table}>
     <thead>
       <tr>

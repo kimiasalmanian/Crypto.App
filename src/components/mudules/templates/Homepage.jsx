@@ -5,21 +5,25 @@ import Pagination from "./Pagination";
 
 
 function Homepage() {
+ 
+const[page,setpage]=useState(1)
 const[coins,setcoins]=useState([]);
 const[isloding,setisloding]=useState(true)
 useEffect (() => {
-  fetch(getcoinlist())
+  setisloding(true);
+  fetch(getcoinlist(page))
 .then((res)=>res.json())
 .then((json=>setcoins(json)))
-setisloding(false)}
-,[]);
+.finally(()=>{setisloding(false)})}
+,[page]);
 
 
   return (
 
     <>
-    <Pagination/>
+    
     <TablesCoin coins={coins} isloding={isloding}/>
+    <Pagination page={page} setpage={setpage}/>
     </>
   )
 }
