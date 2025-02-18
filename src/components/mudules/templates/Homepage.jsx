@@ -15,6 +15,7 @@ const[currency,setcurrency]=useState("usd")
 
 useEffect (() => {
   setisloding(true);
+
   fetch(getcoinlist(page , currency))
 .then((res)=>res.json())
 .then((json=>setcoins(json)))
