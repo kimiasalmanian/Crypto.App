@@ -1,3 +1,5 @@
+import { useDebugValue } from "react"
+
 const BASE_URL="https://api.coingecko.com/api/v3"
 const BASE_KEY="CG-N1BqRy2p7uRnMycPRFXEbdDZ"
 
@@ -6,4 +8,6 @@ const getcoinlist=(page ,currency) =>
 
 
 const searchcoin=(query)=>`${BASE_URL}/search?query=${query}&x_cg_demo_api_key=${BASE_KEY}`
+
+
 export {getcoinlist , searchcoin}

@@ -2,12 +2,12 @@
 import Table from "./Table";
 
 
-function TablesCoin({ coins,isloding }) {
+function TablesCoin({ coins,isloding,currency ,setchart}) {
   return (
 
 <div>
  
- <Table coins={coins} isloding={isloding}/>
+ <Table coins={coins} isloding={isloding} currency={currency}  setchart={setchart}/>
 
 </div>
   )}

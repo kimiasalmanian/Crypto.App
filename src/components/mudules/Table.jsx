@@ -5,7 +5,12 @@ import chartdown from "../../assets/chart-down.svg"
 
 import styles from "./Table.module.css"
 
-function Table({coins,isloding}) {
+function Table({coins,isloding ,currency , setchart}) {
+
+const showhandler= () =>{
+  setchart(true)
+}
+
   return (
     <div className={styles.conteiner}> 
         {isloding ?(<FadeLoader
@@ -27,13 +32,14 @@ function Table({coins,isloding}) {
     <tbody>
    {coins.map(coin=><tr key={coin.id}>
     <td>
-     <div className={styles.symbol}>
+     <div className={styles.symbol} onClick={showhandler}>
       <img src={coin.image} alt=""/>
       <span>{coin.symbol.toUpperCase()}</span>
      </div>
     </td>
       <td>{coin.name}</td>
-      <td>${coin.current_price}</td>
+      <td>{currency ==="usd" ?"$" :currency ==="eur" ?"€" :currency ==="jpy" ?"¥":"?"}
+         {coin.current_price}</td>
       <td className={coin.price_change_percentage_24h>0?styles.success :styles.error}>
       {coin.price_change_percentage_24h.toFixed(2)}%</td>
       <td>{coin.total_volume.toLocaleString()}</td>
