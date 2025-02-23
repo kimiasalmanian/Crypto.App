@@ -2,13 +2,24 @@ import {FadeLoader} from "react-spinners"
 
 import chartup from "../../assets/chart-up.svg"
 import chartdown from "../../assets/chart-down.svg"
+import {marketchart} from "../../services/Crypto Api"
 
 import styles from "./Table.module.css"
 
-function Table({coins,isloding ,currency , setchart}) {
+function Table({coin,isloding ,currency , setchart}) {
 
-const showhandler= () =>{
-  setchart(true)
+  const showhandler= async() =>{
+  try {
+    const res= await fetch(marketchart(coin.id))
+    const json= await res.json()
+  
+    setchart({...json,coin:coin})
+    
+  } catch (error) {
+    setchart(null)
+    
+  }
+  
 }
 
   return (
@@ -30,7 +41,7 @@ const showhandler= () =>{
   
     </thead>
     <tbody>
-   {coins.map(coin=><tr key={coin.id}>
+   {coin.map(coin =><tr key={coin.id}>
     <td>
      <div className={styles.symbol} onClick={showhandler}>
       <img src={coin.image} alt=""/>

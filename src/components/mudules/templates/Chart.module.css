@@ -1,4 +1,4 @@
-.chart {
+.container{
     position: fixed;
     top: 0;
     left: 0;
@@ -7,7 +7,7 @@
     backdrop-filter: blur(3px);
 }
 
-.chart button{
+.cbutton{
     background-color: rgb(197, 48, 48);
     color: #fff;
     text-align: center;
@@ -21,4 +21,42 @@
     border: none;
     
 
+}
+
+.chart{
+
+
+    width: 800px;
+    margin: auto;
+    padding: 20px;
+    margin-top: 50px;
+    background-color: #3a3a3de6;
+    border: 2px solid #bbbbbd;
+    border-radius: 20px;
+}
+
+.graph{
+width: 760px;
+height: 300px;
+
+
+}
+.type{
+    margin-top: 30px;
+
+}
+.type button{
+    margin: 10px 20px;
+    color: #3874ff;
+    border:1px solid #3874ff;
+    background-color: #3a3a3de6;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+
+}
+.selected{
+    background-color: #3874ff;
+    color: #fff;
 }

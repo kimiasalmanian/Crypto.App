@@ -7,7 +7,7 @@ function TablesCoin({ coins,isloding,currency ,setchart}) {
 
 <div>
  
- <Table coins={coins} isloding={isloding} currency={currency}  setchart={setchart}/>
+ <Table coin={coins} isloding={isloding} currency={currency}  setchart={setchart}/>
 
 </div>
   )}

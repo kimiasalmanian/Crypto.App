@@ -30,7 +30,7 @@ useEffect (() => {
     <Search currency={currency} setcurrency={setcurrency}/>
     <TablesCoin coins={coins} isloding={isloding} currency={currency}  setchart={setchart}/>
     <Pagination page={page} setpage={setpage}/>
-   {!!chart &&<Chart chart={chart} setchart={setchart}/>}
+   {!!chart &&<Chart chart={chart} setchart={setchart} />}
     </>
   )
 }
